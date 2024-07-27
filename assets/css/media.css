@@ -1,0 +1,276 @@
+.sections{
+    display: grid;
+    grid-gap: 40px;
+    max-width: 60%;
+}
+
+.sections > .section{
+    display: grid;
+    grid-gap: 20px;
+}
+
+.description{
+    display: grid;
+    grid-gap: 20px;
+}
+
+.description > div{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: baseline;
+}
+
+.description > div > *{
+    font-size: 1.5em;
+    text-shadow: 3px 3px rgb(0 0 0 / 40%);
+}
+
+.description > div > .text{
+    text-align: left;
+}
+
+.grid-content{
+    display: grid;
+    gap: 20px;
+}
+
+.downloable-img{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    box-shadow: 10px 10px rgb(0 0 0 / 40%);
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    transition: background-size 0.2s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.downloable-img::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0 0 0 / 20%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.downloable-img::after{
+    content: "";
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 32px;
+    height: 33px;
+    background-image: url(/assets/images/icons/download-arrow.png);
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.downloable-img:hover{
+    background-size: 102%;
+}
+
+.downloable-img:hover::before, .downloable-img:hover::after{
+    opacity: 1;
+}
+
+.downloable-img{
+    background-color: rgb(0 0 0 / 50%);
+}
+
+.sections > .section[data-section="gifs"] > .grid-content{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.sections > .section[data-section="gifs"] > .grid-content > .downloable-img{
+    width: 100%;
+    min-height: 240px;
+}
+
+.sections > .section[data-section="images"] > .grid-content{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.sections > .section[data-section="images"] > .grid-content > .downloable-img{
+    height: 200px;
+}
+
+.sections > .section[data-section="wallpapers"] > .grid-content{
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.sections > .section[data-section="wallpapers"] > .grid-content > .downloable-img{
+    height: 600px;
+}
+
+.sections > .section[data-section="videos"] > .grid-content{
+    grid-template-columns: 1fr 1fr;
+}
+
+.sections > .section[data-section="presskit"] > .grid-content{
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.sections > .section[data-section="presskit"] > .grid-content > *{
+    width: 64px;
+    height: 64px;
+    background-size: 64px;
+}
+
+/* Responsivo */
+@media(max-width: 1480px){
+    .sections{
+        max-width: 70%;
+    }
+}
+
+@media(max-width: 1280px){
+    .sections{
+        max-width: 80%;
+    }
+}
+
+@media(max-width: 1080px){
+    .sections{
+        max-width: 90%;
+    }
+}
+
+@media(max-width: 980px){
+    .sections > .section[data-section="gifs"] > .grid-content{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .sections > .section[data-section="images"] > .grid-content{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .sections > .section[data-section="wallpapers"] > .grid-content{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .sections > .section[data-section="videos"] > .grid-content{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .sections > .section[data-section="presskit"] > .grid-content{
+        grid-template-columns: auto auto auto auto auto auto auto auto;
+    }
+}
+
+@media(max-width: 720px){
+
+    .sections{
+        max-width: 90%;
+    }
+
+    .sections > .section[data-section="gifs"] > .grid-content{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .sections > .section[data-section="images"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="wallpapers"] > .grid-content{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .sections > .section[data-section="videos"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="presskit"] > .grid-content{
+        grid-template-columns: auto auto auto auto;
+    }
+    
+    .sections > .section[data-section="gifs"] > .grid-content > .downloable-img{
+        width: 150px;
+    }
+
+    .sections > .section[data-section="wallpapers"] > .grid-content > .downloable-img{
+        height: 300px;
+    }
+}
+
+@media(max-width: 545px){
+
+    .sections{
+        max-width: 90%;
+    }
+
+    .sections > .section[data-section="gifs"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="images"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="wallpapers"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="videos"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="presskit"] > .grid-content{
+        grid-template-columns: auto auto auto auto;
+    }
+    
+    .sections > .section[data-section="gifs"] > .grid-content > .downloable-img{
+        width: 100%;
+    }
+
+    .sections > .section[data-section="wallpapers"] > .grid-content > .downloable-img{
+        height: 300px;
+    }
+}
+
+@media(max-width: 360px){
+
+    .sections{
+        max-width: 90%;
+    }
+
+    .sections > .section[data-section="gifs"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="images"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="wallpapers"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="videos"] > .grid-content{
+        grid-template-columns: 1fr;
+    }
+    
+    .sections > .section[data-section="presskit"] > .grid-content{
+        grid-template-columns: auto auto auto;
+    }
+    
+    .sections > .section[data-section="gifs"] > .grid-content > .downloable-img{
+        width: 100%;
+    }
+
+    .sections > .section[data-section="wallpapers"] > .grid-content > .downloable-img{
+        height: 300px;
+    }
+}

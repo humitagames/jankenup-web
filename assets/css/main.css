@@ -1,0 +1,316 @@
+@font-face {
+    font-family:'Nikumaru';
+    src: url(/assets/fonts/nikumaru.otf);
+}
+
+:root{
+    --white: #d4f4dd;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Nikumaru', sans-serif;
+}
+::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
+}
+
+html,body{
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    color: var(--white);
+}
+
+html{
+    background-color: #4cbcf8;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    grid-row-gap: 30px;
+    overflow-x: hidden;
+    transition: opacity 0.1s ease-in-out;
+    opacity: 0;
+    min-height: 100vh;
+}
+
+body::after{
+    content: '';
+    height: 0px;
+}
+
+.text{
+    font-size: 2em;
+    color: #d4f4dd;
+    text-align: center;
+    text-shadow: 3px 3px 0px rgb(0 0 0 / 50%);
+    margin: 0px 20px;
+}
+
+.main-video{
+    position: relative;
+    width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.main-video > video{
+    width: 100%;
+}
+
+.main-video > .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(76,188,248,1) 0%, rgba(255,255,255,0) 80%);
+}
+
+.union{
+    position: relative;
+    margin-top: -30px;
+    width: 100vw;
+}
+
+.union::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(76,188,248,1) 0%, rgba(255,255,255,0) 80%);
+}
+
+.logo{
+    position: sticky;
+    margin-top: 20px;
+    bottom: calc( 100vh - 238px );
+    left: calc( 50% - 250px );
+    width: 500px;
+    height: 178px;
+    z-index: 2;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.jade{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 549px;
+    z-index: 1;
+    pointer-events: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.ryusei{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 567px;
+    z-index: 1;
+    transform: translateX(-180px);
+    pointer-events: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+iframe{
+    max-width: 100%;
+    margin: auto;
+    box-shadow: 10px 10px rgb(0 0 0 / 40%);
+}
+
+.download-on{
+    position: sticky;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 150px 150px;
+    grid-column-gap: 10px;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 2;
+}
+
+.download-on > *{
+    position: relative;
+}
+
+
+.download-on img{
+    max-width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.download-on-google-play img{
+    width: 200px;
+}
+
+.footer{
+    display: grid;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100px;
+    gap: 20px;
+}
+
+.footer >[data-content=label]{
+    color: #d4f4dd;
+    text-shadow: 2px 2px 0px rgb(0 0 0 / 50%);
+    text-align: center;
+}
+
+.footer > [data-content=social-networks] {
+    display: grid;
+    grid-template-columns: repeat(5,50px);
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.footer >[data-content=social-networks] > a, .footer > [data-content=social-networks] > a:visited {
+    position: relative;
+    display: grid;
+    align-items: center;
+    min-height: 30px;
+    -webkit-filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5));
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.5));
+}
+
+.footer >[data-content=social-networks] > a.instagram{
+    background-image: url(/assets/images/icons/instagram.png);
+    width: 35px;
+    height: 36px;
+}
+
+.footer >[data-content=social-networks] > a.youtube{
+    background-image: url(/assets/images/icons/youtube.png);
+    width: 51px;
+    height: 36px;
+}
+
+.footer >[data-content=social-networks] > a.discord{
+    background-image: url(/assets/images/icons/discord.png);
+    width: 44px;
+    height: 33px;
+}
+
+.footer >[data-content=social-networks] > a.twitter{
+    background-image: url(/assets/images/icons/twitter.png);
+    width: 44px;
+    height: 36px;
+}
+
+.footer >[data-content=social-networks] > a.tiktok{
+    background-image: url(/assets/images/icons/tiktok.png);
+    width: 36px;
+    height: 36px;
+}
+
+.footer > .media-presskit{
+    text-align: center;
+    text-shadow: 2px 2px 0px rgb(0 0 0 / 50%);
+    cursor: pointer;
+    border-top: 2px solid var(--white);
+    padding-top: 20px;
+    text-decoration: none;
+    color: var(--white);
+    width: 100vw;
+}
+
+
+.footer > .humita-year{
+    display: flex;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    justify-content: center;
+    text-shadow: 2px 2px 0px rgb(0 0 0 / 50%);
+    border-top: 2px solid var(--white);
+    padding-top: 20px;
+    font-size: 0.8em;
+}
+
+.footer > .humita-year::after{
+    content: attr(data-year);
+
+}
+
+.fade-in{
+    opacity: 1!important;
+}
+
+.input{
+    display: grid;
+    justify-items: center;
+}
+
+.input > input{
+    border: none;
+    background-color: rgba(0,0,0,.6);
+    height: 50px;
+    border-radius: 8px;
+    outline: none;
+    color: #d4f4dd;
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+}
+
+.input > input::placeholder {
+    color: #d4f4dd;
+    opacity: .8;
+    font-style: italic;
+}
+
+/* Responsivo */
+@media(max-width: 1400px){
+
+    .logo{
+        position: sticky;
+        left: calc( 50% - 125px );
+        width: 250px;
+        height: 89px;
+    }
+
+    .text{
+        z-index: 2;
+    }
+
+    iframe{
+        min-width: 100%;
+    }
+
+    .ryusei{
+        display: none;
+    }
+
+    .jade{
+        display: none;
+    }
+
+    .input > input{
+        width: calc( 100% - 40px);
+    }
+
+}

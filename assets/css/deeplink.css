@@ -1,0 +1,38 @@
+a.join{
+    text-decoration: none;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 250px;
+    height: 41px;
+    background-color: #ec6800;
+    color: #d4f4dd;
+    border-radius: 4px;
+    letter-spacing: 4px;
+    border-bottom: 4px solid rgba(0,0,0,.2);
+    transition: background-color 0.2s ease-in-out;
+}
+
+a.join.disabled{
+    filter: grayscale(1);
+}
+
+a.join.connecting{
+    background-color: #00bc77;
+}
+
+.text{
+    line-height: 45px;
+}
+
+.text > i{
+    color: #ec6800;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px rgba(255,255,255,.5);
+}
+
+.download-on{
+    position: relative;
+    bottom: 0px;
+}

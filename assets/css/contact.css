@@ -1,0 +1,31 @@
+.contact-info{
+    display: grid;
+    justify-items: center;
+}
+
+.contact-info > *{
+    color: #d4f4dd;
+    text-align: center;
+}
+
+.contact-info > .headline{
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 3px 3px 0px rgb(0 0 0 / 50%);
+    margin: 0px 20px;
+}
+
+.contact-info > .mailto{
+    text-decoration: none;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 250px;
+    height: 41px;
+    background-color: #ec6800;
+    border-radius: 4px;
+    letter-spacing: 4px;
+    border-bottom: 4px solid rgba(0,0,0,.2);
+    margin-top: 20px;
+}
